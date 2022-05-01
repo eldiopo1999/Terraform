@@ -8,19 +8,19 @@ pipeline {
          }
 	 stage('Fomrate') {
                steps{
-	         "terraform fmt"
+	         sh "terraform fmt"
 			  }
           }
      
          stage('Refresh') {
               steps{
-	         "terraform refresh"
+	         sh "terraform refresh"
 		}
           }
      
          stage('Validate') {
              steps{
-		  "terraform validate"
+		 sh "terraform validate"
 	       }
           }
 	
