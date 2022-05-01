@@ -6,23 +6,23 @@ pipeline {
                  git(branch: 'master', credentialsId: 'eldiopo',  url: 'https://github.com/eldiopo1999/Terraform.git')
               }
          }
-		 stage('Fomrate') {
-             steps{
-				          "terraform fmt"
+	 stage('Fomrate') {
+               steps{
+	         "terraform fmt"
 			  }
-     }
+          }
      
-     stage('Refresh') {
-             steps{
-				          "terraform refresh"
-			  }
-     }
+         stage('Refresh') {
+              steps{
+	         "terraform refresh"
+		}
+          }
      
-     stage('Validate') {
+         stage('Validate') {
              steps{
-				          "terraform validate"
-			  }
-     }
+		  "terraform validate"
+	       }
+          }
 	
-}
+   }
 }
